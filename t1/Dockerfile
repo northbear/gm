@@ -4,7 +4,7 @@ COPY morse-responder /go/src/morse-responder
 RUN  cd /go/src/morse-responder; go build
 RUN  ls -l /go/src/morse-responder
 
-FROM ununtu:20.04
+FROM ubuntu:20.04
 
 ENV APP_PORT=8081
 COPY --from=buildimage /go/src/morse-responder/morse-responder .
