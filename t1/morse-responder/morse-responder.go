@@ -10,9 +10,10 @@ import (
 	"strconv"
 )
 
-const DEFAULT_APP_PORT = "5000"
-
 type MorseEncoderTable map[rune]string
+
+var APP_VERSION = "dev"
+var DEFAULT_APP_PORT = "8081"
 
 var encoderTable MorseEncoderTable = MorseEncoderTable{
 	'a': "*-", 'b': "-***", 'c': "-*-*", 'd': "-**",
@@ -46,7 +47,7 @@ func main() {
 	port := os.Getenv("APP_PORT")
 	_, err := strconv.ParseInt(port, 10, 32)
 	if err != nil {
-		log.Printf("Incorrect value of APP_PORT environment variable")
+		log.Printf("Warning: Incorrect value of APP_PORT environment variable")
 		log.Printf("Use default value: %s", DEFAULT_APP_PORT)
 		port = DEFAULT_APP_PORT
 	}
