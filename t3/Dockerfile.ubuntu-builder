@@ -1,7 +1,9 @@
 FROM ubuntu:20.04
 
 ENV TZ=Asia/Jerusalem
+ENV PATH=/cicd-tools:${PATH}
 
 RUN apt-get update && apt-get -y upgrade; \
     DEBIAN_FRONTEND=noninteractive \
     apt-get -y install build-essential cmake
+COPY cicd-tools /
