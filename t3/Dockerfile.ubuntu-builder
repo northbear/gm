@@ -1,4 +1,7 @@
 FROM ubuntu:20.04
 
+ENV TZ=Asia/Jerusalem
+
 RUN apt-get update && apt-get -y upgrade; \
+    DEBIAN_FRONTEND=noninteractive \
     apt-get -y install build-essential cmake
