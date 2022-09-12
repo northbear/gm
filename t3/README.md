@@ -17,5 +17,5 @@ To prepare the builder image, use script `./make-ubuntu-builder-image.sh`. it cr
 An example of using the solution is provided in script `./pipeline-helloworld-build-project.sh`.
 
 
-*NB* CTest stage of the is not implemented yet. WIP
+*NB*: CTest stage of the pipeline is not implemented yet. WIP
 
