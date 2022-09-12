@@ -1,5 +1,14 @@
 # Task 1
 
+Create Ubuntu docker based microservice works on port 8081 which replies a IP address of connected
+client in a morse code. You can implement it on your preferable programming language.
+
+## Implementation
+
+The app is implemented with Golang. To build respective container image use command `make build-image`.
+It creates an image with name `morse-responder:0.0.1`. The application accepts HTTP connection on port 8081
+and responds with morse-encoded remote peer IP address. The simplest way to test it is `curl` command. 
+
 ### 1. How did you configure the Dockerfile to perform this task?
 
 In this case, I configure the application (particulary a port the application is running on)
