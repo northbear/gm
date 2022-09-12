@@ -5,5 +5,10 @@ ENV PATH=/cicd-tools:${PATH}
 
 RUN apt-get update && apt-get -y upgrade; \
     DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install build-essential cmake
-COPY cicd-tools /
+    apt-get -y install build-essential cmake git
+COPY cicd-tools /cicd-tools
+
+RUN mkdir -p /projects
+WORKDIR /projects
+
+ENTRYPOINT ["/cicd-tools/container-init.sh"]

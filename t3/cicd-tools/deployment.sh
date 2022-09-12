@@ -8,6 +8,8 @@ fi
 
 DEPLOY_SOURCE=${1}
 
+cd "${PROJECT_DIR}"
+
 if [[ -f "${DEPLOY_SOURCE}" ]]; then
     echo "The file ${DEPLOY_SOURCE} is deployed to the environment ${DEPLOY_ENV}"
 elif [[ -d "${DEPLOY_SOURCE}" ]]; then

@@ -8,6 +8,8 @@ fi
 
 DELIVERY_SOURCE=${1}
 
+cd "${PROJECT_DIR}"
+
 if [[ -f "${DELIVERY_SOURCE}" ]]; then
     echo "The file ${DELIVERY_SOURCE} is pushed to repository ${DELIVERY_DEST}"
 elif [[ -d "${DELIVERY_SOURCE}" ]]; then
